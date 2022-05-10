@@ -1,0 +1,21 @@
+.wrapper {
+  background-color: green;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 152px 1fr;
+}
+
+.dashboardContainer {
+  padding: 35px 20px;
+  background-color: #BDBDBD;
+}
+
+.mainContainer {
+  padding: 20px 35px;
+  background-color: #FFF;
+}

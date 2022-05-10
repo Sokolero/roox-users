@@ -1,0 +1,29 @@
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+button {
+  border: none;
+}
+
+h1 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+h1, h2 {
+  margin: 0;
+}

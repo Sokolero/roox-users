@@ -1,0 +1,48 @@
+$primary-color: #000;
+$secondary-color: #A3A3A3;
+$bg-dark-grey: #BDBDBD;
+$bg-light-grey: #F3F3F3;
+$link-color: #4B51EF;
+
+.card {
+  max-width: 420px;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: $bg-light-grey;
+
+  .row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .label_name,
+  .label_city,
+  .label_company {
+    margin-right: 7px;
+    color: $secondary-color;
+  }
+
+  .label_name {
+    text-transform: uppercase;
+  }
+
+  .name,
+  .city,
+  .company {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .details_link {
+    margin-right: 0;
+    margin-left: auto;
+    font-size: 12px;
+    line-height: 14px;
+    color: $link-color;
+  }
+}

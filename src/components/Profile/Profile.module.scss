@@ -1,0 +1,53 @@
+@mixin field {
+  width: 50%;
+  padding: 5px 10px;
+  font-size: 10px;
+  line-height: 1px;
+  border-radius: 5px;
+  border: 1px solid #D8D8D8;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 6px 20px 12px;
+  font-size: 10px;
+  line-height: 10px;
+  border-radius: 8px;
+  border: 1px solid #F3F3F3;
+
+  .label {
+    font-size: 8px;
+    line-height: 10px;
+    margin-bottom: 10px;
+  }
+
+  .label_text {
+    margin-bottom: 3px;
+  }
+
+  .field {
+    @include field;
+  }
+
+  .field_error {
+    @include field;
+    border: 1px solid #D91313;
+  }
+
+  .field_textarea {
+    width: 100%;
+    height: calc(5em + 20px);
+    padding: 5px 10px;
+  }
+}
