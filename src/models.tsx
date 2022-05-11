@@ -27,3 +27,11 @@ export interface IUser {
     website: string,
     company: ICompany
 }
+
+export interface IUserState {
+  users: Array<IUser>;
+}
+
+export interface IState {
+  users: IUserState;
+}

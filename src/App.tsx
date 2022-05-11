@@ -9,6 +9,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Users />}/>
+        <Route path=":userId" element={<Profile />} />
       </Route>
     </Routes>
   )

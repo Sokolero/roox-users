@@ -11,7 +11,7 @@ export default function Users({ users }) {
       { users.error ?  <div>{ users.error }</div> : null }
       <ul className={styles.users_list}>
         {
-          users.users.map(user => <UserCard user={ user } />)
+          users.users.map(user => <UserCard user={ user } key={user.id}/>)
         }
       </ul>
     </>

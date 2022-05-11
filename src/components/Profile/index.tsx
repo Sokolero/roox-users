@@ -1,6 +1,9 @@
 import * as React from "react";
+import { Routes, Route, useParams } from "react-router-dom";
 import { Form, Field } from "react-final-form";
 import Button from "../Button";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { IUser } from "../../models";
 import styles from "./Profile.module.scss";
 
 const initialValues = {
@@ -15,15 +18,28 @@ const initialValues = {
   comment: ""
 }
 
-const onSubmit = (values) => {
-  console.log(values);
+type ProfileProps = {
+  user: IUser;
 }
 
 export default function Profile() {
+  let params = useParams();
+  let userId = parseInt(params.userId);
+  console.log(userId)
+  const user = useAppSelector(state => state.users.users.filter(user => user.id === userId)[0]);
+
+  const onSubmit = (values) => {
+    console.log(values);
+  }
+
+  if (!user) {
+    return <div>Загрузка...</div>
+  }
+
   return (
     <div className={styles.profile}>
       <div className={styles.header}>
-        <h2>Профиль пользователя</h2>
+        <h2>Профиль пользователя {user.name}</h2>
         <Button styled="button">Редактировать</Button>
       </div>
       <Form

@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+
+}
+
+.h1 {
+   margin-bottom: 17px;
+}
+
+.users_list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0 0;
+}

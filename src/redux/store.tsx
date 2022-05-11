@@ -1,5 +1,6 @@
 import * as React from "react";
-import { configureStore } from "@reduxjs/toolkit";
+// import { configureStore } from "@reduxjs/toolkit";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk"
 import { userReducer } from "./userReducer";
 import { IUser } from "../models";
@@ -22,9 +23,13 @@ const preloadedState: IState = {
   }
 }
 
-export const store = configureStore({
-  reducer: {
-    users: userReducer,
-  },
-  preloadedState
-});
+export const store = createStore(
+  combineReducers({
+    users: userReducer
+  }),
+  preloadedState,
+  applyMiddleware(thunk)
+)
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

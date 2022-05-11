@@ -5,9 +5,10 @@ $bg-light-grey: #F3F3F3;
 $link-color: #4B51EF;
 
 .card {
-  max-width: 420px;
+  flex-basis: 420px;
   padding: 10px 10px;
   margin-bottom: 20px;
+  margin-right: 20px;
   border-radius: 8px;
   background-color: $bg-light-grey;
 
