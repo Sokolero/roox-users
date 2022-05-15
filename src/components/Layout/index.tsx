@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Outlet } from "react-router-dom";
-import Dashboard from "../Dashboard";
-import styles from "./Layout.module.scss";
+import * as React from 'react';
+import { Outlet } from 'react-router-dom';
+import Dashboard from '../Dashboard';
+import styles from './Layout.module.scss';
 
 export default function Layout() {
-  return(
+  return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.dashboardContainer}>
@@ -15,5 +15,5 @@ export default function Layout() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -12,6 +12,10 @@ $link-color: #4B51EF;
   border-radius: 8px;
   background-color: $bg-light-grey;
 
+  &:last-child {
+    margin-bottom: 10px;
+  }
+
   .row {
     display: flex;
     align-items: flex-start;

@@ -7,19 +7,34 @@
   border: 1px solid #D8D8D8;
 }
 
+@mixin textarea {
+  width: 100%;
+  height: calc(5em + 20px);
+  padding: 5px 10px;
+}
+
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  margin-bottom: 16px;
 
   h2 {
     margin: 0;
+    flex-grow: 0;
+    flex-shrink: 2;
   }
+}
+
+.btn_container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  margin-top: 18px;
   padding: 20px 6px 20px 12px;
   font-size: 10px;
   line-height: 10px;
@@ -40,14 +55,25 @@
     @include field;
   }
 
+  .field_readonly {
+    @include field;
+    color: rgba(0, 0, 0, 0.3);
+    &:focus {
+      border: none;
+    }
+  }
+
   .field_error {
     @include field;
     border: 1px solid #D91313;
   }
 
   .field_textarea {
-    width: 100%;
-    height: calc(5em + 20px);
-    padding: 5px 10px;
+    @include textarea;
+  }
+
+  .form_buttons {
+    display: flex;
+    justify-content: flex-end;
   }
 }

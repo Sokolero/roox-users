@@ -1,37 +1,46 @@
-import { handleActions, Action } from "redux-actions";
-import { IUser } from "../models";
+import { handleActions, Action } from 'redux-actions';
+import { IUser } from '../models';
 
 export interface IState {
   users: IUser[];
   status: string;
   error: string;
+  filter: string;
 }
 
 const initialState: IState = {
   users: [],
-  status: "not loaded",
-  error: "",
+  status: 'not loaded',
+  error: '',
+  filter: 'city', // company
 };
 
 export const userReducer = handleActions(
   {
     GET_USERS_REQUEST: (state: IState, action: Action<any>): IState => ({
       ...state,
-      status: "requesting",
-      error: "",
+      status: 'requesting',
+      error: '',
     }),
 
-    GET_USERS_FAILED: (state, action) => ({
+    GET_USERS_FAILED: (state: IState, action: Action<any>): IState => ({
+      ...state,
       users: [],
-      status: "failed",
+      status: 'failed',
       error: action.payload,
     }),
 
-    GET_USERS_SUCCESS: (state, action) => ({
+    GET_USERS_SUCCESS: (state: IState, action: Action<any>): IState => ({
+      ...state,
       users: action.payload,
-      status: "success",
-      error: "",
+      status: 'success',
+      error: '',
+    }),
+
+    CHOICE_FILTER: (state: IState, action: Action<any>): IState => ({
+      ...state,
+      filter: action.payload,
     }),
   },
-  initialState
+  initialState,
 );

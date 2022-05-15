@@ -1,13 +1,14 @@
 .wrapper {
-  background-color: green;
+  background-color: #fff;
 }
 
 .container {
   margin-right: auto;
   margin-left: auto;
   min-height: 100vh;
+  // max-width: 520px;
   display: grid;
-  grid-template-columns: 152px 1fr;
+  grid-template-columns: auto 1fr;
 }
 
 .dashboardContainer {

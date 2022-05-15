@@ -1,8 +1,13 @@
-import * as React from "react";
-import { NavLink } from "react-router-dom";
-import styles from "./UserCard.module.scss";
+import * as React from 'react';
+import { NavLink } from 'react-router-dom';
+import { IUser } from '../../models';
+import styles from './UserCard.module.scss';
 
-export default function UserCard({ user }) {
+interface UserProps {
+  user: IUser;
+}
+
+export default function UserCard({ user }: UserProps) {
   return (
     <li className={styles.card}>
       <div className={styles.row}>
@@ -19,5 +24,5 @@ export default function UserCard({ user }) {
         <NavLink to={`/${user.id}`} className={styles.details_link}>Подробнее</NavLink>
       </div>
     </li>
-  )
+  );
 }

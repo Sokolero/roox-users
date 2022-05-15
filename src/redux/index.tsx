@@ -1,6 +1,6 @@
 export {
   store,
   AppDispatch,
-  RootState
-} from "./store";
-export { getUsers } from "./actions";
+  RootState,
+} from './store';
+export { getUsers, choiceFilter } from './actions';

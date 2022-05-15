@@ -1,15 +1,26 @@
-import * as React from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { getUsers } from "../../redux";
-import Users from "./Users";
-import { IState } from "../../models";
+import * as React from 'react';
+import { useAppSelector } from '../../hooks';
+import Users from './Users';
+import { IUser } from '../../models';
+
+export interface UsersProps {
+  users: Array<IUser>;
+  status: string;
+  error: string;
+  filter: string;
+}
 
 export default function UsersContainer() {
-  const st = useAppSelector((state) => state);
-  console.log("users level", st)
-  const users = useAppSelector((state) => state.users.users);
-  const status = useAppSelector((state) => state.users.status);
-  const error = useAppSelector((state) => state.users.error);
+  const users: UsersProps = useAppSelector((state) => state.users);
 
-  return <Users users={{ users, status, error }} />
+  const getSortingProp = {
+    city: (item) => item.address.city,
+    company: (item) => item.company.name,
+  };
+
+  const userList = [...users.users];
+  const { filter } = users;
+  userList.sort((a, b) => (getSortingProp[filter](a) > getSortingProp[filter](b) ? 1 : -1));
+
+  return <Users users={{ ...users, users: userList }} />;
 }
